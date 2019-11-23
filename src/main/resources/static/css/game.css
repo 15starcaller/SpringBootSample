@@ -1,0 +1,19 @@
+.square{
+    width: 200px;
+    height:200px;
+    background-color:darksalmon;
+    
+    border: 2px solid black;
+border-radius: 13em 0.5em/1em 0.5em;
+}
+.row{
+    margin: 10px;
+}
+body{
+    background-color:bisque; 
+}
+#restart_id{
+    margin: 25 px;
+    padding-left: 2500 px;
+    border-radius: 13em 0.5em/1em 0.5em;
+}

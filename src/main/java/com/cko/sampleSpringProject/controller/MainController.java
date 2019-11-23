@@ -7,8 +7,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 
     @GetMapping("/loginPage")
-    public String showLoginPage(){
+    public String showLoginPage() {
         return "login";
+    }
+
+
+    @GetMapping("/")
+    public String showMainPage() {
+        return "mainPage";
+    }
+
+    @GetMapping("/game")
+    public String showGamePage() {
+        return "game";
     }
 
 }
