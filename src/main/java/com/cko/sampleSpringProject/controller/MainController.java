@@ -1,7 +1,9 @@
 package com.cko.sampleSpringProject.controller;
 
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
@@ -20,6 +22,12 @@ public class MainController {
     @GetMapping("/game")
     public String showGamePage() {
         return "game";
+    }
+    @GetMapping("/test")
+    public String testing(@RequestParam String name, @RequestParam String mood) {
+    System.out.println(name);
+        System.out.println(mood);
+        return "test";
     }
 
 }
