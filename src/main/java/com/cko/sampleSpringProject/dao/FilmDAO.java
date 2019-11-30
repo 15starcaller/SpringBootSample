@@ -4,5 +4,6 @@ import com.cko.sampleSpringProject.model.Film;
 import org.springframework.data.repository.CrudRepository;
 
 public interface FilmDAO extends CrudRepository<Film,Long> {
-
+Film findFilmById(Long id);//ctrl+E недавние файлы
+//Film findFilmByRatingGreater
 }

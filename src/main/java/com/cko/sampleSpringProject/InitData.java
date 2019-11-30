@@ -37,10 +37,20 @@ public class InitData {
 
 //        smscSender.send_sms("89775548911","TEST MESSAGE",1, "", "", 0, "", "");
         initUserAndRoles();
+        initFilms();
+
+
+    }
+
+    private void initFilms() {
         Film film = new Film("Rosomaha",9,18);
         filmDAO.save(film);
-
-
+        Film film1 = new Film("Rosomaha324",9,18);
+        filmDAO.save(film1);
+        Film film2 = new Film("Rosomaha234",9,18);
+        filmDAO.save(film2);
+        Film film3 = new Film("Rosomahagtfhjfgj",9,18);
+        filmDAO.save(film3);
     }
 
     private void initUserAndRoles(){

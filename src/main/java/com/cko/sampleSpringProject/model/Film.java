@@ -14,6 +14,9 @@ public class Film {
     @Column
     private int age;
 
+    public Film() {
+    }
+
     public Film(String title, int rating, int age) {
         this.title = title;
         this.rating = rating;
