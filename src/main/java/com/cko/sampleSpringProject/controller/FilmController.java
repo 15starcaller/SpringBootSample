@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller//annotation
@@ -14,11 +16,15 @@ import java.util.Optional;
 @RequestMapping("/films")
 public class FilmController {
     @Autowired//автоматически связать/инджектет
-            FilmDAO filmDAO;//просто взывает к контексту. Точка взаимосвязи для скл и этого
+    FilmDAO filmDAO;//просто взывает к контексту. Точка взаимосвязи для скл и этого
 
     @GetMapping("/all")
-    public String showGamePage() {
-        return "oldFilms";
+    public ModelAndView showAllFilms() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("oldFilms");
+        List<Film> filmsList = filmDAO.findAll();
+        modelAndView.addObject("films", filmsList);
+        return modelAndView;
     }
 
     @PostMapping("/newFilm")
@@ -26,7 +32,7 @@ public class FilmController {
     {
         filmDAO.save(film);
         System.out.println(film.getTitle());
-        return "NewFilm_aka_CreaterFilm";
+        return "oldFilms";
     }//todo
 
     @GetMapping("/editFilm")
@@ -39,9 +45,18 @@ public class FilmController {
         return modelAndView;
         //http://localhost:8080/films/editFilm?id=4
     }
-    @PostMapping("/editFilm")
-    public String editFilm(Film film){
-        filmDAO.save(film);
-        return "oldFilms";//
+
+    @GetMapping("/deleteFilm")
+    public RedirectView deleteFilm(@RequestParam Long id) {
+        filmDAO.deleteById(id);
+        return new RedirectView("/film/all");
     }
+
+    @PostMapping("/editFilm")//после редактирования
+    public RedirectView editFilm(Film film) {
+        filmDAO.save(film);
+        //return "editFilms";//
+        return new RedirectView("/film/all");
+    }
+
 }

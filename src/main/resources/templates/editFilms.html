@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/films/editFilm" method="post">
+<form action="/films/deleteFilm" method="post">
     <input name="id" type="text" aria-label="Name" class="form-control" placeholder="Name" th:value="${film.id}" readonly>
     <input name="title" type="text" aria-label="Title" class="form-control" placeholder="Name" th:value="${film.title}">
     <input name="rating" type="text" aria-label="Rating" class="form-control" placeholder="Rating" th:value="${film.rating}">
