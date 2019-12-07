@@ -56,13 +56,16 @@ public class InitData {
     private void initUserAndRoles(){
         Authority adminAuthority = new Authority("ROLE_ADMIN");
         Authority userAuthority = new Authority("ROLE_USER");
-        authorityService.insert(adminAuthority);
+        authorityService.insert(adminAuthority);//сохранение в базу
         authorityService.insert(userAuthority);
 
         List<Authority> authorities = new ArrayList<Authority>();
         authorities.add(adminAuthority);
-        userService.insert(new User("1@mail.ru",bCryptPasswordEncoder.encode("1"), authorities));
+        for (int i = 0; i < 10; i++) {
 
+
+            userService.insert(new User(i+"1@mail.ru", bCryptPasswordEncoder.encode(String.valueOf(i)), authorities));
+        }
 
     }
 }

@@ -22,11 +22,13 @@ public class MainController {
     public String showGamePage() {
         return "game";
     }
+//    @GetMapping("/test")
+//    public String testing(@RequestParam String name, @RequestParam String mood) {
+//    System.out.println(name);
+//        System.out.println(mood);
+//        return "test";
+//    }
     @GetMapping("/test")
-    public String testing(@RequestParam String name, @RequestParam String mood) {
-    System.out.println(name);
-        System.out.println(mood);
-        return "test";
-    }
+    public String showTestPage() {return "test";}
 
 }
