@@ -1,4 +1,4 @@
-package com.cko.sampleSpringProject.controller;
+package com.cko.sampleSpringProject.controller.REST;
 
 
 import com.cko.sampleSpringProject.dao.FilmDAO;
