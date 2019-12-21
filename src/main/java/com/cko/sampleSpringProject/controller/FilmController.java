@@ -16,7 +16,7 @@ import java.util.Optional;
 @RequestMapping("/films")
 public class FilmController {
     @Autowired//автоматически связать/инджектет
-    FilmDAO filmDAO;//просто взывает к контексту. Точка взаимосвязи для скл и этого
+    FilmDAO filmDAO;//просто взывает к контексту. Точка взаимосвязи для SQL и этого
 
     @GetMapping("/all")
     public ModelAndView showAllFilms() {

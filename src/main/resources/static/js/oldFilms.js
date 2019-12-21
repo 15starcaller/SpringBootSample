@@ -31,7 +31,7 @@ $(document).ready(function () {
                     "</td>"+
                 "</td>")
             }
-            alert('success');
+
         },
         error: function (response) {
             alert('error');
@@ -39,3 +39,29 @@ $(document).ready(function () {
     });
 
 })
+
+function addFilm(){ /*ajax наоборот*/
+
+    var title =$("#title").val();
+    var rating =$("#rating").val();
+    var age =$("#age").val();
+
+    var newProduct ={
+        'title':title,
+        'rating':rating,
+        'age':age
+    }
+    $.ajax({
+        method:"post",
+        url: "/api/products/add",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(newProduct),
+        success: function(){
+            window.location.replace("/productsPage")
+        },
+        error: function (error) {
+
+        }
+    })
+
+}

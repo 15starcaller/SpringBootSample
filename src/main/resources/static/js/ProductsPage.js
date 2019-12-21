@@ -5,7 +5,6 @@ $(document).ready(function(){
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (films) {
-        console.log(products);
             for (var i = 0; i < products.length; i++) {
                 for (let i = 0; i < products.length; i++) {
                     $("#forAdd").before("<tr>" +
@@ -24,3 +23,4 @@ $(document).ready(function(){
     }
     })
     })
+
