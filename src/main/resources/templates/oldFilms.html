@@ -49,7 +49,7 @@
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><! -- что и для чего-->
-    Запустить модальное окно.
+    Запустить модальное окно
 </button>
 
 <!-- Modal -->
@@ -76,6 +76,34 @@
     </div>
 </div>
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="edit-modal" data-target="#editModal">
+    Редактировать
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="edit-modal" id="editModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+<input id="id-edit" readonly>
+                <input id="id-title" type="text" placeholder="Type product name">
+                <input id="id-rating" type="number" placeholder="Type rating">
+                <input id="id-age" type="number" placeholder="Type age">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="addFilm()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
